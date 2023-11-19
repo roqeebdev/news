@@ -46,8 +46,8 @@ export const fileUpload = createAsyncThunk("user/fileUpload", async (userCredent
   return response;
 });
 
-export const getUpload = createAsyncThunk("user/getUpload", async (userCredentials) => {
-  const profile = await APIService.getUpload(userCredentials);
+export const getUpload = createAsyncThunk("user/getUpload", async () => {
+  const profile = await APIService.getUpload();
   const response = await profile.data;
   return response;
 });
@@ -155,6 +155,31 @@ const userSlice = createSlice({
         state.users = null;
         state.error = showErrorToast(action.error.message);
       })
+  
+    .addCase(getUpload.pending, (state) => {
+      state.loading = true;
+      state.users = null;
+      state.error = null;
+    })
+    .addCase(getUpload.fulfilled, (state, action) => {
+      console.log(action.payload.status_code);
+      if (action.payload.status_code === "0") {
+        state.users = action.payload;
+      } else if (action.payload.status_code === "1") {
+        state.error = action.payload.message;
+       // showErrorToast(action.payload.message);
+      } else {
+        state.error = action.payload.message;
+        //showErrorToast(action.payload.message);
+      }
+      state.loading = false;
+    })
+    .addCase(getUpload.rejected, (state, action) => {
+      state.loading = false;
+      state.users = null;
+      state.error = showErrorToast(action.error.message);
+    })
+      
   },
 });
 

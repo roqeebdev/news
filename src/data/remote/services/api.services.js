@@ -19,7 +19,7 @@ export class APIService {
   //add files API CALL
   static async addFiles(userCredentials) {
     try {
-      return apiClient.post("/identity_uploaded", userCredentials);
+      return apiClient.post("identity_upload", userCredentials);
     } catch (error) {
       APIService.extractServerError(error);
       throw error;
@@ -29,7 +29,7 @@ export class APIService {
   //send file as email
   static async sendFiles(userCredentials) {
     try {
-      return apiClient.post("/email_message", userCredentials);
+      return apiClient.post("email_message", userCredentials);
     } catch (error) {
       APIService.extractServerError(error);
       throw error;
@@ -39,7 +39,7 @@ export class APIService {
   //get uploaded files
   static async uploadedFiles(userCredentials) {
     try {
-      return apiClient.get(`/document_details?image=${userCredentials}`);
+      return apiClient.get(`document_details?image=${userCredentials}`);
     } catch (error) {
       APIService.extractServerError(error);
       throw error;
@@ -49,7 +49,7 @@ export class APIService {
   //upload file
   static async fileUpload(userCredentials) {
     try {
-      return apiClient.post("/user_document_creation", userCredentials);
+      return apiClient.post("user_document_creation", userCredentials);
     } catch (error) {
       APIService.extractServerError(error);
       throw error;
@@ -59,7 +59,7 @@ export class APIService {
   //get upload file
   static async getUpload() {
     try {
-      return apiClient.get("/document_list");
+      return apiClient.get("document_list");
     } catch (error) {
       APIService.extractServerError(error);
       throw error;

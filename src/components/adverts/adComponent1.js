@@ -55,7 +55,7 @@ const Advert2 = () => {
               className="md:col-span-1"
             >
               <img
-                src={`http://159.223.130.31/txtx_transfer_api/assets/img/campaign_post/${item.image}`}
+                src={`https://api.transfermelon.com/index.php/assets/img/campaign_post/${item.image[2]}`}
                 alt=""
                 className="h-[200px] w-full rounded-md object-cover"
               />
@@ -69,7 +69,7 @@ const Advert2 = () => {
               className="md:col-span-1"
             >
               <img
-                src={`http://159.223.130.31/txtx_transfer_api/assets/img/campaign_post/${item.image}`}
+                src={`https://api.transfermelon.com/index.php/assets/img/campaign_post/${item.image}`}
                 alt=""
                 className="h-[200px] w-full rounded-md object-cover"
               />

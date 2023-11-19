@@ -29,7 +29,7 @@ const FileDownload = () => {
   const downloadZipFile = (zipFilePath) => {
     // Create an anchor element for the download
     const anchor = document.createElement("a");
-    anchor.href = `http://159.223.130.31/txtx_transfer_api/${zipFilePath}`;
+    anchor.href = `/imgs/${zipFilePath}`;
     anchor.download = "download.zip"; // Specify the desired download file name
     anchor.style.display = "none";
   
