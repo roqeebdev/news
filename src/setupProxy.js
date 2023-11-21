@@ -17,12 +17,12 @@ module.exports = function(app) {
   );
 
   app.use(
-    '/imgs',
+    '/email',
     createProxyMiddleware({
-      target: 'https://api.transfermelon.com/',
+      target: 'http://161.35.56.41:8083/dms/',
       changeOrigin: true,
       pathRewrite: {
-        '^/imgs': '',
+        '^/email': '',
       },
       onProxyReq: (proxyReq) => {
         // Add your headers here

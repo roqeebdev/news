@@ -1,27 +1,30 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { sendFiles } from "../data/local/reducers/user.reducer";
 import { useState } from "react"; 
 import { toast } from 'react-toastify';
 
-const SendAsMail = () => {
+const SendAsMail = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [subject, setSubject] = useState("");
   const [recipientEmail, setRecipientEmail] = useState("");
   const addFileProfile = useSelector((state) => state.user.addFilesProfile);
   const zippedFile = addFileProfile.zip_file;
+  const parts = zippedFile.split("/"); // Split the URL by '/'
+  const fileIdWithExtension = parts[parts.length - 1]; // Get the last part
+  const fileId = fileIdWithExtension.split(".")[0];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); 
-
+  const handleSubmit = async (e) => {       e.preventDefault();
+const link = "http://localhost:3000/fileDownload/" + fileId
     let userCredential = {
-      email: recipientEmail,
-      subject: subject,
-      body: zippedFile,
+      receiverMail: recipientEmail,
+      downloadLink: link,
     };
 
     const { payload } = await dispatch(sendFiles(userCredential));
+
+    console.log(payload);
 
       toast.success('Mail Send Successfully', {
         position: toast.POSITION.TOP_CENTER,
@@ -41,7 +44,7 @@ const SendAsMail = () => {
 
       <form onSubmit={handleSubmit}> {/* Add a form element with an onSubmit handler */}
         <div className="p-5 grid gap-5">
-          <div className="text-xs grid gap-1">
+          {/* <div className="text-xs grid gap-1">
             <span>Title</span>
             <input
               type="text"
@@ -50,7 +53,7 @@ const SendAsMail = () => {
               value={subject}
               onChange={(e) => setSubject(e.target.value)} // Update the state
             />
-          </div>
+          </div> */}
           <div className="text-xs grid gap-1">
             <span>Email address</span>
             <input

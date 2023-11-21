@@ -1,5 +1,5 @@
 import Axios from "axios";
-import { API_BASE_URL, API_EMAIL_BASE_URL, HEADER} from "../../../utils/constant";
+import { API_BASE_URL, API_EMAIL_BASE_URL, EMAIL_HEADER, HEADER} from "../../../utils/constant";
 
 
 export const apiClient = Axios.create({
@@ -13,6 +13,6 @@ export const apiClient = Axios.create({
 });
 
 export const apiEmailClient = Axios.create({
-    baseURL: API_EMAIL_BASE_URL,
-    headers: HEADER,  
+    baseURL: '/email/',
+    headers: EMAIL_HEADER,  
 });

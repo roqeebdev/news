@@ -26,7 +26,7 @@ const Advert2 = () => {
       return () => clearInterval(interval);
     }
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, apiData]);
 
   const item = apiData.length > 0 ? apiData[currentIndex] : null;
 
@@ -55,7 +55,7 @@ const Advert2 = () => {
               className="md:col-span-1"
             >
               <img
-                src={`https://api.transfermelon.com/index.php/assets/img/campaign_post/${item.image[2]}`}
+                src={`https://api.transfermelon.com/assets/img/campaign_post/${item.image}`}
                 alt=""
                 className="h-[200px] w-full rounded-md object-cover"
               />
@@ -69,7 +69,7 @@ const Advert2 = () => {
               className="md:col-span-1"
             >
               <img
-                src={`https://api.transfermelon.com/index.php/assets/img/campaign_post/${item.image}`}
+                src={`https://api.transfermelon.com/assets/img/campaign_post/${item.image}`}
                 alt=""
                 className="h-[200px] w-full rounded-md object-cover"
               />

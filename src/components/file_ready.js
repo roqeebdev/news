@@ -47,9 +47,9 @@ const FileReady = () => {
         </button>
       </div>
       <div className="grid grid-cols-2 text-xs gap-8 mt-6">
-        <Link to={"/send_file"} className="text-end text-[#71cb90] underline">
-          Send as email
-        </Link>
+      <Link to={{ pathname: "/send_file", state: {files:fileId} }} className="text-end text-[#71cb90] underline">
+  Send as email
+</Link>
         <Link to={"/view_content"} className="opacity-75 underline">
           View content
         </Link>

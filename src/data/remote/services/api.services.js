@@ -29,7 +29,7 @@ export class APIService {
   //send file as email
   static async sendFiles(userCredentials) {
     try {
-      return apiClient.post("email_message", userCredentials);
+      return apiEmailClient.post("third_party_mail", userCredentials);
     } catch (error) {
       APIService.extractServerError(error);
       throw error;

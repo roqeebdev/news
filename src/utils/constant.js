@@ -7,14 +7,11 @@ export const HEADER = {
 
 };
 export const EMAIL_HEADER = {
-  "x-api-key": "987655",
+  "x-api-key": "25082023",
   "content-type": API_CONTENT_TYPE,
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': '*',
-  'Access-Control-Allow-Credentials': 'true'
 };
 export const API_EMAIL_BASE_URL =
-  "http://mosquepay.org/mosquepayapi/v1/api/email_message";
+  "http://161.35.56.41:8083/dms/";
 
 export const retrieveFromLocalStorage = (keys) => {
   const data = {};
