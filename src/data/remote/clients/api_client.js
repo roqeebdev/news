@@ -9,7 +9,6 @@ export const apiClient = Axios.create({
   'Content-Type': 'application/json',
   withCredentials: true,
   mode: 'no-cors',
-
 });
 
 export const apiEmailClient = Axios.create({
