@@ -16,7 +16,7 @@ const SendAsMail = (props) => {
   const fileId = fileIdWithExtension.split(".")[0];
 
   const handleSubmit = async (e) => {       e.preventDefault();
-const link = "https://api.transfermelon.com/fileDownload/" + fileId
+const link = "https://www.transfermelon.com/fileDownload/" + fileId
     let userCredential = {
       receiverMail: recipientEmail,
       downloadLink: link,

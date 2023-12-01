@@ -30,14 +30,14 @@ const FileReady = () => {
         type="text"
         name=""
         id=""
-        value={`https://api.transfermelon.com/fileDownload/${fileId}`}
+        value={`https://www.transfermelon.com/fileDownload/${fileId}`}
         disabled
         className="p-4 rounded-sm text-sm md:text-xs w-full border border-[#c4c4c432] bg-[#c4c4c416] truncatem my-5"
       />
       <div className="flex justify-center">
         <button className="border px-8 py-4 text-xs rounded text-white bg-[#71cb90]">
           <CopyToClipboard
-            text={`https://api.transfermelon.com/fileDownload/${fileId}`}
+            text={`https://www.transfermelon.com/fileDownload/${fileId}`}
             onCopy={handleCopyZipped}
           >
             <span className=" cursor-pointer text-[#127ec8]">

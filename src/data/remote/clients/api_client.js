@@ -3,12 +3,8 @@ import { API_BASE_URL, API_EMAIL_BASE_URL, EMAIL_HEADER, HEADER} from "../../../
 
 
 export const apiClient = Axios.create({
-    baseURL: '/api/',
+    baseURL: API_BASE_URL,
     headers: HEADER,  
-      'Access-Control-Allow-Origin': '*',
-  'Content-Type': 'application/json',
-  withCredentials: true,
-  mode: 'no-cors',
 });
 
 export const apiEmailClient = Axios.create({
