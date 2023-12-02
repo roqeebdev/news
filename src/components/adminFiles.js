@@ -1,19 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { fileUpload, sendFiles } from "../data/local/reducers/user.reducer";
+import { useDispatch } from "react-redux";
+import { fileUpload } from "../data/local/reducers/user.reducer";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 const AdminFiles = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [body, setBody] = useState("");
   const [header, setHeader] = useState("");
   const [buttonName, setButtonName] = useState("");
   const [buttonUrl, setButtonUrl] = useState("");
   const [imageFile, setImageFile] = useState(null); // State to store the uploaded image file
-  const addFileProfile = useSelector((state) => state.user.addFilesProfile);
-  const zippedFile = addFileProfile.zip_file;
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];

@@ -29,11 +29,9 @@ const FileDownload = () => {
   const downloadZipFile = (zipFilePath) => {
     // Create an anchor element for the download
     const anchor = document.createElement("a");
-    anchor.href = `/imgs/${zipFilePath}`;
+    anchor.href = `https://api.transfermelon.com/${zipFilePath}`;
     anchor.download = "download.zip"; // Specify the desired download file name
     anchor.style.display = "none";
-  
-    // Add the anchor to the DOM and trigger the click event
     document.body.appendChild(anchor);
     anchor.click();
   

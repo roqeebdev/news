@@ -1,13 +1,11 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { sendFiles } from "../data/local/reducers/user.reducer";
 import { useState } from "react"; 
 import { toast } from 'react-toastify';
 
 const SendAsMail = (props) => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [subject, setSubject] = useState("");
   const [recipientEmail, setRecipientEmail] = useState("");
   const addFileProfile = useSelector((state) => state.user.addFilesProfile);
   const zippedFile = addFileProfile.zip_file;

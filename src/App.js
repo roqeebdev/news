@@ -21,7 +21,7 @@ function App() {
        
       </Route>
       <Route path="admin_update" element={<AdminFiles/>}/>
-      <Route path='/fileDownload/:id' element={<FileDownload />} />
+      <Route path='fileDownload/:id' element={<FileDownload />} />
     </Routes>
     </BrowserRouter>
   );

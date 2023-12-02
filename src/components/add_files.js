@@ -3,7 +3,7 @@ import remove from "../Media/delete.svg";
 import React, { useState, useRef } from "react";
 import { CircularProgress } from '@mui/material'; 
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addFiles } from "../data/local/reducers/user.reducer";
 
 
@@ -48,8 +48,10 @@ const AddFiles = () => {
       formData.append(`image_${index + 1}`, file);
     });
     const { payload } = await dispatch(addFiles(formData));
-    if (payload.status_code === "0") {
-      navigate("/file_ready");
+    console.log(payload);
+    
+    if (payload.status_code === "0" ) {
+      navigate("file_ready");
     }
   };
 
